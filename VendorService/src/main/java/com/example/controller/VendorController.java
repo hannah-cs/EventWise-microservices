@@ -33,7 +33,7 @@ public class VendorController {
         vendorService.createVendor(newVendor);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/services/{id}")
     public void updateServices(@PathVariable("id") Integer id, @RequestBody List<String> newServices){
         vendorService.updateVendorServices(id, newServices);
     }
