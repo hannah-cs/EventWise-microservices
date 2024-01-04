@@ -23,9 +23,13 @@ public class VendorService {
         return vendorRepository.findById(id);
     }
 
-    public Optional<Boolean> isAvailable(Integer id){
-        Optional<Vendor> vendor = vendorRepository.findById(id);
-        return vendor.map(Vendor::isAvailable);
+    public void createVendor(Vendor newVendor){
+        vendorRepository.save(newVendor);
+    }
+
+    public boolean isAvailable(Integer id) {
+        Optional<Vendor> vendorOptional = vendorRepository.findById(id);
+        return vendorOptional.map(Vendor::isAvailable).orElse(false);
     }
 
     public Optional<Vendor> updateVendorServices(Integer id, List<String> newServices) {
