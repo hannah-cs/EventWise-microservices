@@ -27,13 +27,18 @@ public class EventController {
     }
 
     @PostMapping
-    public void createEvent(Event newEvent){
+    public void createEvent(@RequestBody Event newEvent){
         eventService.createEvent(newEvent);
     }
 
     @PutMapping
     public void updateEvent(Integer id, Event event){
         eventService.updateEvent(id, event);
+    }
+
+    @GetMapping("/testClient/{id}")
+    public boolean isClientExists(@PathVariable("id") Integer id){
+        return eventService.isClientExists(id);
     }
 
 }

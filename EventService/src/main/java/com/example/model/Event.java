@@ -68,4 +68,12 @@ public class Event {
         this.clientId = clientId;
     }
 
+    @Override
+    public String toString(){
+        return "Event Name: " + eventName
+                + ", date: " + eventDate
+                + ", client ID: " + clientId
+                + ", vendor ID: " + vendorId;
+    }
+
 }

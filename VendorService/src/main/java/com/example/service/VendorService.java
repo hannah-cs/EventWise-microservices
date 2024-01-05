@@ -44,5 +44,15 @@ public class VendorService {
         return vendorOptional;
     }
 
+    public void setAvailable(Integer id) {
+        Optional<Vendor> vendorOptional = vendorRepository.findById(id);
+
+        vendorOptional.ifPresent(vendor -> {
+            vendor.setAvailable(true);
+            vendorRepository.save(vendor);
+        });
+    }
+
+
 
 }

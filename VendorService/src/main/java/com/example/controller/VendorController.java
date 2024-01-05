@@ -42,4 +42,9 @@ public class VendorController {
     public boolean isAvailable(@PathVariable("id") Integer id){
         return vendorService.isAvailable(id);
     }
+
+    @PutMapping("/availability/{id}")
+    public void setAvailable(@PathVariable("id") Integer id){
+        vendorService.setAvailable(id);
+    }
 }
