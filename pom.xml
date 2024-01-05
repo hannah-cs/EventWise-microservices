@@ -17,6 +17,7 @@
     <modules>
         <module>ClientService</module>
         <module>VendorService</module>
+        <module>EventService</module>
     </modules>
     <properties>
 		<java.version>17</java.version>
@@ -45,6 +46,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 	</dependencies>
 
